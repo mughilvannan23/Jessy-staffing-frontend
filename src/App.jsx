@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import {
-  HashRouter,
   Routes,
   Route,
   Navigate
@@ -45,8 +44,7 @@ const ProtectedAdminRoute = ({ children }) => {
 
 const App = () => {
   return (
-    <HashRouter>
-      <div className="app-container d-flex flex-column min-vh-100">
+    <div className="app-container d-flex flex-column min-vh-100">
 
         <Navbar />
 
@@ -182,7 +180,6 @@ const App = () => {
         <CookieConsent />
 
       </div>
-    </HashRouter>
   );
 };
 
