@@ -1,0 +1,258 @@
+/* =========================================================
+   INDUSTRIES SECTION STYLES (industriesSection.css)
+   Luxury Glassmorphism & Infinite Right-to-Left Ticker Slider
+   ========================================================= */
+
+/* Main Section Wrapper */
+.industries-section {
+  position: relative;
+  background: linear-gradient(135deg, #0b3d91 0%, #0d5db8 50%, #1678d8 100%);
+  padding: 5.5rem 0;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Ambient Animated Glowing Background Orbs */
+.industries-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  animation: orbFloat 10s ease-in-out infinite alternate;
+}
+
+.industries-bg-orb-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(42, 141, 216, 0.8) 0%, rgba(11, 61, 145, 0) 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.industries-bg-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.6) 0%, rgba(13, 93, 184, 0) 70%);
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+/* Badge & Header */
+.industries-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+}
+
+.industries-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.industries-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Infinite Right-to-Left Marquee Slider Container */
+.industries-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.industries-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scrollRightToLeft 35s linear infinite;
+  will-change: transform;
+}
+
+/* Pause Scrolling Animation on Hover so Users can Interact */
+.industries-marquee-container:hover .industries-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Infinite Right-to-Left Keyframe Animation */
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Fixed Width for Marquee Cards */
+.industry-card-item {
+  width: 290px;
+  flex-shrink: 0;
+}
+
+/* Premium Dark Blue Glassmorphism Cards */
+.industry-card-glass {
+  position: relative;
+  background: rgba(8, 38, 75, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Subtle Card Inner Gradient Overlay */
+.industry-card-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(42, 141, 216, 0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover Animation Effects */
+.industry-card-glass:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(13, 60, 115, 0.88);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 20px 45px rgba(11, 61, 145, 0.45), 0 0 25px rgba(42, 141, 216, 0.35);
+}
+
+.industry-card-glass:hover::before {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.8), rgba(255, 255, 255, 0.4));
+}
+
+/* Icon Box & Icon Floating Animation */
+.industry-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(42, 141, 216, 0.25) 0%, rgba(11, 61, 145, 0.35) 100%);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: #60a5fa;
+  font-size: 1.75rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: iconSubtleFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes iconSubtleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.industry-card-glass:hover .industry-icon-wrapper {
+  transform: rotate(10deg) scale(1.15);
+  background: linear-gradient(135deg, #2a8dd8 0%, #0b3d91 100%);
+  color: #ffffff;
+  border-color: #60a5fa;
+  box-shadow: 0 8px 25px rgba(42, 141, 216, 0.5);
+}
+
+/* Card Content Typography */
+.industry-card-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.industry-card-glass:hover .industry-card-name {
+  color: #93c5fd;
+}
+
+.industry-card-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.45;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Bottom Glowing Indicator Bar on Hover */
+.industry-card-indicator {
+  width: 30px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin-top: 1rem;
+  transition: all 0.4s ease;
+}
+
+.industry-card-glass:hover .industry-card-indicator {
+  width: 50px;
+  background: #60a5fa;
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991.98px) {
+  .industries-section {
+    padding: 4rem 0;
+  }
+
+  .industries-title {
+    font-size: 2.1rem;
+  }
+
+  .industry-card-item {
+    width: 250px;
+  }
+
+  .industry-card-glass {
+    padding: 1.5rem 1.25rem;
+  }
+}
