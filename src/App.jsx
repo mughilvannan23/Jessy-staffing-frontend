@@ -1,5 +1,11 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import {
+  HashRouter,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom';
+
 import { AuthContext } from './context/AuthContext';
 
 // Layout & Global Components
@@ -29,59 +35,154 @@ import AdminProfile from './pages/admin/AdminProfile';
 
 const ProtectedAdminRoute = ({ children }) => {
   const { admin } = useContext(AuthContext);
+
   if (!admin || !admin.token) {
     return <Navigate to="/admin/login" replace />;
   }
+
   return children;
 };
 
 const App = () => {
   return (
-    <div className="app-container d-flex flex-column min-vh-100">
-      <Navbar />
+    <HashRouter>
+      <div className="app-container d-flex flex-column min-vh-100">
 
-      <div className="flex-grow-1">
-        <Routes>
-          {/* Main Simplified Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/careers/:id" element={<JobDetail />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/employee-registration" element={<Registration />} />
-          <Route path="/employer-registration" element={<Registration />} />
+        <Navbar />
 
+        <div className="flex-grow-1">
+          <Routes>
 
+            {/* Public Routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/careers/:id" element={<JobDetail />} />
+            <Route path="/contact" element={<ContactPage />} />
 
-          {/* Graceful redirects */}
-          <Route path="/services" element={<Navigate to="/" replace />} />
-          <Route path="/industries" element={<Navigate to="/" replace />} />
-          <Route path="/gallery" element={<Navigate to="/" replace />} />
+            {/* Registration */}
+            <Route path="/register" element={<Registration />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/employee-registration" element={<Registration />} />
+            <Route path="/employer-registration" element={<Registration />} />
 
-          {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboard /></ProtectedAdminRoute>} />
-          <Route path="/admin/jobs" element={<ProtectedAdminRoute><AdminJobs /></ProtectedAdminRoute>} />
-          <Route path="/admin/applications" element={<ProtectedAdminRoute><AdminApplications /></ProtectedAdminRoute>} />
-          <Route path="/admin/services" element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="/admin/gallery" element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="/admin/testimonials" element={<ProtectedAdminRoute><AdminTestimonials /></ProtectedAdminRoute>} />
-          <Route path="/admin/clients" element={<ProtectedAdminRoute><AdminClients /></ProtectedAdminRoute>} />
-          <Route path="/admin/enquiries" element={<ProtectedAdminRoute><AdminContactEnquiries /></ProtectedAdminRoute>} />
-          <Route path="/admin/settings" element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="/admin/profile" element={<ProtectedAdminRoute><AdminProfile /></ProtectedAdminRoute>} />
+            {/* Graceful Redirects */}
+            <Route
+              path="/services"
+              element={<Navigate to="/" replace />}
+            />
 
-          {/* 404 Route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            <Route
+              path="/industries"
+              element={<Navigate to="/" replace />}
+            />
+
+            <Route
+              path="/gallery"
+              element={<Navigate to="/" replace />}
+            />
+
+            {/* Admin Login */}
+            <Route
+              path="/admin/login"
+              element={<AdminLogin />}
+            />
+
+            {/* Protected Admin Routes */}
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminDashboard />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/jobs"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminJobs />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/applications"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminApplications />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/testimonials"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminTestimonials />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/clients"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminClients />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/enquiries"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminContactEnquiries />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            <Route
+              path="/admin/profile"
+              element={
+                <ProtectedAdminRoute>
+                  <AdminProfile />
+                </ProtectedAdminRoute>
+              }
+            />
+
+            {/* Admin Redirects */}
+            <Route
+              path="/admin/services"
+              element={<Navigate to="/admin/dashboard" replace />}
+            />
+
+            <Route
+              path="/admin/gallery"
+              element={<Navigate to="/admin/dashboard" replace />}
+            />
+
+            <Route
+              path="/admin/settings"
+              element={<Navigate to="/admin/dashboard" replace />}
+            />
+
+            {/* 404 */}
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+
+          </Routes>
+        </div>
+
+        <Footer />
+        <FloatingActions />
+        <CookieConsent />
+
       </div>
-
-      <Footer />
-      <FloatingActions />
-      <CookieConsent />
-    </div>
+    </HashRouter>
   );
 };
 
