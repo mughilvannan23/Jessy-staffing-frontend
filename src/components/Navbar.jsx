@@ -32,7 +32,7 @@ const Navbar = () => {
             <i className="bi bi-briefcase-fill fs-5"></i>
           </div>
           <div>
-            <span className="fw-extrabold fs-4 nav-logo-text d-block lh-1">APEX GLOBAL</span>
+            <span className="fw-extrabold fs-4 nav-logo-text d-block lh-1">JESSY GLOBAL</span>
             <small className="nav-sub-text fw-bold tracking-wider fs-7" style={{ fontSize: '0.68rem', letterSpacing: '1px' }}>
               STAFFING & HR SOLUTIONS
             </small>

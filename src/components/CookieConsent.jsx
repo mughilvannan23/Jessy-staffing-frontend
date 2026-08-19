@@ -4,14 +4,14 @@ const CookieConsent = () => {
   const [accepted, setAccepted] = useState(true);
 
   useEffect(() => {
-    const consent = localStorage.getItem('apex_cookie_consent');
+    const consent = localStorage.getItem('jessy_cookie_consent');
     if (!consent) {
       setAccepted(false);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('apex_cookie_consent', 'true');
+    localStorage.setItem('jessy_cookie_consent', 'true');
     setAccepted(true);
   };
 

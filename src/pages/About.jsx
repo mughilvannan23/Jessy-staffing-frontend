@@ -16,7 +16,7 @@ const About = () => {
                 Pioneering Premium Workforce & HR Outsourcing Globally
               </h1>
               <p className="text-muted leading-relaxed mb-3">
-                Founded with a mission to deliver elite talent acquisition and institutional staffing services, Apex Global Staffing & HR Solutions stands as a trusted strategic human capital partner to multi-national corporations, healthcare networks, premier private schools, and high-security infrastructure.
+                Founded with a mission to deliver elite talent acquisition and institutional staffing services, Jessy Global Staffing & HR Solutions stands as a trusted strategic human capital partner to multi-national corporations, healthcare networks, premier private schools, and high-security infrastructure.
               </p>
               <p className="text-muted leading-relaxed mb-4">
                 We operate across specialized divisions—School Staffing, Healthcare Clinical Placement, Industrial & Asset Security, In-Home Care, and Corporate Talent Headhunting—ensuring every placed candidate adheres to rigorous compliance, credentialing, and ethical standards.
@@ -33,7 +33,7 @@ const About = () => {
             <div className="col-lg-6">
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
-                alt="About Apex Global HR"
+                alt="About Jessy Global HR"
                 className="img-fluid rounded-4 shadow-lg"
               />
             </div>

@@ -29,7 +29,7 @@ const FloatingActions = () => {
     <div className="floating-actions-container">
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/18005552739?text=Hello%20Apex%20Global%20Staffing,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+        href="https://wa.me/18005552739?text=Hello%20Jessy%20Global%20Staffing,%20I%20would%20like%20to%20inquire%20about%20your%20services."
         target="_blank"
         rel="noreferrer"
         className="btn-floating btn-whatsapp"

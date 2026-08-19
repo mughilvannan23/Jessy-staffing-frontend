@@ -19,7 +19,7 @@ const AdminSidebar = () => {
             <i className="bi bi-shield-check fs-5"></i>
           </div>
           <div>
-            <h6 className="fw-bold text-white mb-0">APEX ADMIN</h6>
+            <h6 className="fw-bold text-white mb-0">JESSY ADMIN</h6>
             <small className="text-info fs-7 fw-bold">CONTROL DASHBOARD</small>
           </div>
         </div>

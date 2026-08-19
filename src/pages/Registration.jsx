@@ -186,7 +186,7 @@ const Registration = () => {
           <p className="registration-hero-subtitle">
             {activeTab === 'employee'
               ? 'Join our global talent pool and get matched with top healthcare, educational, and corporate career opportunities.'
-              : 'Partner with Apex Global HR Solutions for custom recruitment, executive search, and workforce outsourcing services.'}
+              : 'Partner with Jessy Global HR Solutions for custom recruitment, executive search, and workforce outsourcing services.'}
           </p>
 
           {/* Top Toggle Buttons */}
@@ -400,7 +400,7 @@ const Registration = () => {
                           name="privacyConsent"
                           checked={employeeData.privacyConsent}
                           onChange={handleEmployeeChange}
-                          label="I agree to the Privacy Policy and consent to Apex HR storing my CV for employment matching purposes. *"
+                          label="I agree to the Privacy Policy and consent to Jessy HR storing my CV for employment matching purposes. *"
                           required
                         />
                       </Form.Group>
@@ -495,7 +495,7 @@ const Registration = () => {
                           name="company"
                           value={employerData.company}
                           onChange={handleEmployerChange}
-                          placeholder="e.g. Apex Health Systems"
+                          placeholder="e.g. Jessy Health Systems"
                           required
                         />
                       </Form.Group>
@@ -536,7 +536,7 @@ const Registration = () => {
                           name="commConsent"
                           checked={employerData.commConsent}
                           onChange={handleEmployerChange}
-                          label="I consent to Apex HR Solutions contacting me regarding custom staffing proposals and executive recruitment options. *"
+                          label="I consent to Jessy HR Solutions contacting me regarding custom staffing proposals and executive recruitment options. *"
                           required
                         />
                       </Form.Group>

@@ -120,7 +120,7 @@ const ServiceDetail = () => {
                     </div>
                     <div>
                       <small className="text-muted d-block">Official Email</small>
-                      <strong className="text-navy">staffing@apexstaffing.com</strong>
+                      <strong className="text-navy">staffing@jessystaffing.com</strong>
                     </div>
                   </div>
                 </div>

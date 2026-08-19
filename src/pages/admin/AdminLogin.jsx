@@ -28,7 +28,7 @@ const AdminLogin = () => {
             <div className="rounded-3 bg-navy-gradient text-white p-3 d-inline-flex align-items-center justify-content-center mb-3 shadow">
               <i className="bi bi-shield-lock-fill fs-2"></i>
             </div>
-            <h4 className="fw-extrabold text-navy mb-1">Apex Admin Portal</h4>
+            <h4 className="fw-extrabold text-navy mb-1">Jessy Admin Portal</h4>
             <small className="text-muted">Enter credentials to manage HR platform</small>
           </div>
 

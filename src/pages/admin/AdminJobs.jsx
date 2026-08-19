@@ -42,7 +42,7 @@ const AdminJobs = () => {
     workingHours: '8 Hours / Shift',
     status: 'published',
     isFeatured: false,
-    companyName: 'Apex Global Staffing'
+    companyName: 'Jessy Global Staffing'
   });
   const [companyImageFile, setCompanyImageFile] = useState(null);
 
@@ -87,7 +87,7 @@ const AdminJobs = () => {
       workingHours: '8 Hours / Shift',
       status: 'published',
       isFeatured: false,
-      companyName: 'Apex Global Staffing'
+      companyName: 'Jessy Global Staffing'
     });
     setCompanyImageFile(null);
     setShowModal(true);
@@ -116,7 +116,7 @@ const AdminJobs = () => {
       workingHours: job.workingHours || '8 Hours / Shift',
       status: job.status || 'published',
       isFeatured: job.isFeatured || false,
-      companyName: job.companyName || 'Apex Global Staffing'
+      companyName: job.companyName || 'Jessy Global Staffing'
     });
     setCompanyImageFile(null);
     setShowModal(true);

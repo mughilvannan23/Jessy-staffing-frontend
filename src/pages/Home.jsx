@@ -181,12 +181,12 @@ const Home = () => {
             </div>
 
             <div className="col-lg-6">
-              <span className="badge bg-soft-primary text-primary px-3 py-2 rounded-pill fw-bold mb-2">ABOUT APEX GLOBAL</span>
+              <span className="badge bg-soft-primary text-primary px-3 py-2 rounded-pill fw-bold mb-2">ABOUT JESSY GLOBAL</span>
               <h2 className="display-6 fw-bold text-navy mb-4">
                 Connecting Outstanding Talent with Visionary Organizations
               </h2>
               <p className="text-muted leading-relaxed mb-4">
-                Apex Global Staffing & HR Solutions is a premier placement consultancy offering full-spectrum manpower management. From certified educators to licensed healthcare specialists and tactical asset security personnel, we deliver reliable staffing tailored to your precise operational needs.
+                Jessy Global Staffing & HR Solutions is a premier placement consultancy offering full-spectrum manpower management. From certified educators to licensed healthcare specialists and tactical asset security personnel, we deliver reliable staffing tailored to your precise operational needs.
               </p>
 
               <div className="row g-3 mb-4">

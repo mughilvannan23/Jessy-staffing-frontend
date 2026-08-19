@@ -40,7 +40,7 @@ const Footer = () => {
               <div className="rounded-3 bg-white text-primary p-2 d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
                 <i className="bi bi-briefcase-fill fs-5" style={{ color: '#0B4F81' }}></i>
               </div>
-              <span className="fw-extrabold fs-4 text-white">APEX GLOBAL</span>
+              <span className="fw-extrabold fs-4 text-white">JESSY GLOBAL</span>
             </div>
             <p className="text-light opacity-75 small leading-relaxed mb-4" style={{ maxWidth: '400px' }}>
               International leader in executive placement, school staffing, healthcare clinical deployment, facility security, and corporate HR outsourcing solutions.
@@ -109,7 +109,7 @@ const Footer = () => {
 
         <div className="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-light opacity-75">
           <div>
-            &copy; {new Date().getFullYear()} Apex Global Staffing & HR Solutions Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Jessy Global Staffing & HR Solutions Inc. All rights reserved.
           </div>
           <div className="d-flex gap-3">
             <a href="#privacy" className="text-light text-decoration-none">Privacy Policy</a>
