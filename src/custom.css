@@ -369,3 +369,103 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
 }
+
+/* Contact Page Dark Theme Styling matching Screenshot */
+.contact-section-dark {
+  background-color: #0A2640;
+  color: #FFFFFF;
+}
+
+.contact-watermark-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-watermark-title::before {
+  content: "Let's Connect";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-info-card {
+  background: rgba(13, 51, 86, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+}
+
+.contact-form-card {
+  background: rgba(13, 51, 86, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.75rem;
+  background: rgba(42, 141, 216, 0.18);
+  color: #38BDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.contact-input-dark {
+  background-color: rgba(6, 26, 45, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  border-radius: 0.65rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.contact-input-dark::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.contact-input-dark:focus {
+  background-color: rgba(6, 26, 45, 0.9) !important;
+  border-color: #38BDF8 !important;
+  box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+.contact-select-dark {
+  background-color: rgba(6, 26, 45, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  border-radius: 0.65rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.contact-select-dark option {
+  background-color: #0A2640;
+  color: #FFFFFF;
+}
+
+.btn-send-enquiry {
+  background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+  color: #FFFFFF;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.85rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-send-enquiry:hover {
+  background: linear-gradient(135deg, #2196F3 0%, #1E88E5 100%);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 136, 229, 0.4);
+}
+

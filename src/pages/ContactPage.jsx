@@ -7,7 +7,7 @@ const ContactPage = () => {
     name: '',
     phone: '',
     email: '',
-    subject: '',
+    service: 'Jessy Staffing',
     message: ''
   });
   const [loading, setLoading] = useState(false);
@@ -23,10 +23,18 @@ const ContactPage = () => {
     setStatusMsg({ type: '', text: '' });
 
     try {
-      const res = await API.post('/contact', formData);
+      const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || 'N/A',
+        subject: formData.service || 'Jessy Staffing Inquiry',
+        message: formData.message
+      };
+
+      const res = await API.post('/contact', payload);
       if (res.data.success) {
         setStatusMsg({ type: 'success', text: res.data.message });
-        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', phone: '', email: '', service: 'Jessy Staffing', message: '' });
       }
     } catch (err) {
       setStatusMsg({ type: 'danger', text: err.message || 'Failed to submit enquiry. Please try again.' });
@@ -36,68 +44,91 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contact-page pt-navbar">
-      <Breadcrumbs title="Contact & Consultation" />
+    <div className="contact-page pt-navbar contact-section-dark min-vh-100 pb-5">
+      <Breadcrumbs title="Contact Us" />
 
-      <section className="py-5 bg-white">
+      <section className="py-5 position-relative">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-5">
-            <span className="badge bg-soft-primary text-primary px-3 py-2 rounded-pill fw-bold mb-2">GET IN TOUCH</span>
-            <h1 className="display-5 fw-extrabold text-navy">Connect With Our HR Consultants</h1>
-            <p className="text-muted">
-              Whether you need to staff an entire medical facility, deploy asset security, or hire executive leadership, our team is ready 24/7.
-            </p>
+          {/* Header Section with Let's Connect watermark style */}
+          <div className="text-center max-w-2xl mx-auto mb-5 position-relative contact-watermark-title">
+            <h1 className="display-6 fw-bold text-white mb-3 position-relative z-1">
+              Have a question or want to know more about our services? Get in touch with Jessy Agencies today.
+            </h1>
           </div>
 
-          <div className="row g-5 mb-5">
+          <div className="row g-4 mb-5">
+            {/* Left Box: Contact Information */}
             <div className="col-lg-5">
-              <div className="p-4 p-md-5 rounded-4 bg-navy-gradient text-white shadow-lg h-100 d-flex flex-column justify-content-between">
+              <div className="p-4 p-md-5 rounded-4 contact-info-card shadow-lg h-100 d-flex flex-column justify-content-between">
                 <div>
                   <h3 className="fw-bold text-white mb-4">Contact Information</h3>
-                  <p className="text-light opacity-85 mb-4">
-                    Visit our global headquarters or get in touch via phone and email for immediate staffing proposals.
-                  </p>
 
-                  <div className="d-flex flex-column gap-4 mb-4">
-                    <div className="d-flex align-items-start gap-3">
-                      <div className="rounded-circle bg-white bg-opacity-10 p-3 text-info">
-                        <i className="bi bi-geo-alt-fill fs-4"></i>
+                  <div className="d-flex flex-column gap-4">
+                    {/* Founder */}
+                    <div className="d-flex align-items-center gap-3">
+                      <div className="contact-icon-box">
+                        <i className="bi bi-person-fill"></i>
                       </div>
                       <div>
-                        <strong className="d-block text-white">Global Headquarters</strong>
-                        <span className="text-light opacity-75 small">100 Enterprise Boulevard, Suite 500, Financial District, NY 10005</span>
+                        <small className="d-block text-uppercase fw-bold text-light opacity-75" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                          FOUNDER
+                        </small>
+                        <strong className="text-white fs-6">B. Devaraj</strong>
                       </div>
                     </div>
 
+                    {/* Address */}
                     <div className="d-flex align-items-start gap-3">
-                      <div className="rounded-circle bg-white bg-opacity-10 p-3 text-info">
-                        <i className="bi bi-telephone-fill fs-4"></i>
+                      <div className="contact-icon-box mt-1">
+                        <i className="bi bi-geo-alt-fill"></i>
                       </div>
                       <div>
-                        <strong className="d-block text-white">Direct Phone Support</strong>
-                        <span className="text-light opacity-75 small">+1 (800) 555-2739 / +1 (212) 555-0199</span>
+                        <small className="d-block text-uppercase fw-bold text-light opacity-75" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                          ADDRESS
+                        </small>
+                        <strong className="text-white fs-6 lh-base">
+                          No 267, Ramu Army Complex, Vettavalam Road, Enthal Bypass, Tiruvannamalai - 606601
+                        </strong>
                       </div>
                     </div>
 
-                    <div className="d-flex align-items-start gap-3">
-                      <div className="rounded-circle bg-white bg-opacity-10 p-3 text-info">
-                        <i className="bi bi-envelope-fill fs-4"></i>
+                    {/* Mobile */}
+                    <div className="d-flex align-items-center gap-3">
+                      <div className="contact-icon-box">
+                        <i className="bi bi-phone-fill"></i>
                       </div>
                       <div>
-                        <strong className="d-block text-white">Email Address</strong>
-                        <span className="text-light opacity-75 small">contact@jessystaffing.com</span>
+                        <small className="d-block text-uppercase fw-bold text-light opacity-75" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                          MOBILE
+                        </small>
+                        <a href="tel:8056567352" className="text-white text-decoration-none fw-bold me-2">8056567352</a>
+                        <span className="text-light opacity-50">/</span>
+                        <a href="tel:9487577852" className="text-white text-decoration-none fw-bold ms-2">9487577852</a>
+                      </div>
+                    </div>
+
+                    {/* Office */}
+                    <div className="d-flex align-items-center gap-3">
+                      <div className="contact-icon-box">
+                        <i className="bi bi-telephone-fill"></i>
+                      </div>
+                      <div>
+                        <small className="d-block text-uppercase fw-bold text-light opacity-75" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                          OFFICE
+                        </small>
+                        <a href="tel:04175252535" className="text-white text-decoration-none fw-bold">04175-252535</a>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-top border-white border-opacity-20">
+                <div className="pt-4 mt-4 border-top border-white border-opacity-10">
                   <small className="text-light opacity-75 d-block mb-2">Connect via WhatsApp for Instant Response:</small>
                   <a
-                    href="https://wa.me/18005552739"
+                    href="https://wa.me/918056567352"
                     target="_blank"
                     rel="noreferrer"
-                    className="btn btn-info text-white rounded-pill px-4 fw-bold"
+                    className="btn btn-info text-white rounded-pill px-4 fw-bold shadow-sm"
                   >
                     <i className="bi bi-whatsapp me-2"></i> WhatsApp Live Chat
                   </a>
@@ -105,10 +136,9 @@ const ContactPage = () => {
               </div>
             </div>
 
+            {/* Right Box: Contact Form */}
             <div className="col-lg-7">
-              <div className="p-4 p-md-5 rounded-4 bg-light shadow-sm border">
-                <h3 className="fw-bold text-navy mb-4">Send Us a Direct Message</h3>
-
+              <div className="p-4 p-md-5 rounded-4 contact-form-card shadow-lg">
                 {statusMsg.text && (
                   <div className={`alert alert-${statusMsg.type} py-2 px-3 small rounded-3 mb-4`}>
                     {statusMsg.text}
@@ -118,12 +148,12 @@ const ContactPage = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold small text-muted">Your Name *</label>
+                      <label className="form-label fw-semibold small text-light">Full Name *</label>
                       <input
                         type="text"
                         name="name"
-                        className="form-control rounded-3"
-                        placeholder="John Doe"
+                        className="form-control contact-input-dark"
+                        placeholder="Your Full Name"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -131,12 +161,12 @@ const ContactPage = () => {
                     </div>
 
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold small text-muted">Phone Number *</label>
+                      <label className="form-label fw-semibold small text-light">Phone Number *</label>
                       <input
                         type="tel"
                         name="phone"
-                        className="form-control rounded-3"
-                        placeholder="+1 (555) 000-0000"
+                        className="form-control contact-input-dark"
+                        placeholder="Your Mobile Number"
                         value={formData.phone}
                         onChange={handleChange}
                         required
@@ -144,45 +174,43 @@ const ContactPage = () => {
                     </div>
 
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold small text-muted">Email Address *</label>
+                      <label className="form-label fw-semibold small text-light">Email Address</label>
                       <input
                         type="email"
                         name="email"
-                        className="form-control rounded-3"
-                        placeholder="john@example.com"
+                        className="form-control contact-input-dark"
+                        placeholder="name@example.com (Optional)"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                       />
                     </div>
 
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold small text-muted">Inquiry Subject *</label>
+                      <label className="form-label fw-semibold small text-light">Select Service *</label>
                       <select
-                        name="subject"
-                        className="form-select rounded-3"
-                        value={formData.subject}
+                        name="service"
+                        className="form-select contact-select-dark"
+                        value={formData.service}
                         onChange={handleChange}
                         required
                       >
-                        <option value="">Select Subject Category</option>
-                        <option value="School Staffing Inquiry">School Staffing Inquiry</option>
-                        <option value="Security Guard Deployment">Security Guard Deployment</option>
-                        <option value="Healthcare Personnel Request">Healthcare Personnel Request</option>
-                        <option value="Home Nursing Assistance">Home Nursing Assistance</option>
-                        <option value="Corporate HR & Executive Recruitment">Corporate HR & Executive Recruitment</option>
-                        <option value="Payroll Outsourcing Contract">Payroll Outsourcing Contract</option>
-                        <option value="General Consultation">General Consultation</option>
+                        <option value="Jessy Staffing">Jessy Staffing</option>
+                        <option value="School & Educational Staffing">School & Educational Staffing</option>
+                        <option value="Security & Guard Services">Security & Guard Services</option>
+                        <option value="Healthcare Personnel">Healthcare Personnel</option>
+                        <option value="Home Care & Nursing">Home Care & Nursing</option>
+                        <option value="Corporate Executive Staffing">Corporate Executive Staffing</option>
+                        <option value="Payroll Outsourcing">Payroll Outsourcing</option>
                       </select>
                     </div>
 
                     <div className="col-12">
-                      <label className="form-label fw-semibold small text-muted">Message Details *</label>
+                      <label className="form-label fw-semibold small text-light">Message</label>
                       <textarea
                         name="message"
                         rows="4"
-                        className="form-control rounded-3"
-                        placeholder="Describe your staffing requirements, timeline, and headcount..."
+                        className="form-control contact-input-dark"
+                        placeholder="How can Jessy Agencies help you?"
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -190,19 +218,24 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn btn-primary-custom rounded-pill px-5 py-3 mt-4" disabled={loading}>
-                    {loading ? 'Submitting...' : 'Send Message Now'}
+                  <button type="submit" className="btn btn-send-enquiry w-100 mt-4 d-flex align-items-center justify-content-center gap-2" disabled={loading}>
+                    {loading ? 'Submitting...' : (
+                      <>
+                        <span>Send Enquiry</span>
+                        <i className="bi bi-send-fill fs-6"></i>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
             </div>
           </div>
 
-          {/* GOOGLE MAPS EMBED */}
-          <div className="rounded-4 overflow-hidden shadow-sm border" style={{ height: '400px' }}>
+          {/* GOOGLE MAPS EMBED - Tiruvannamalai */}
+          <div className="rounded-4 overflow-hidden shadow-sm border border-secondary border-opacity-25" style={{ height: '380px' }}>
             <iframe
-              title="Jessy Global Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2543635164!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+              title="Jessy Agencies Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15589.673895982885!2d79.0558661!3d12.2274438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bacc084cf73e721%3A0x6732f913d09a2503!2sTiruvannamalai%2C%20Tamil%20Nadu%20606601!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -217,3 +250,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

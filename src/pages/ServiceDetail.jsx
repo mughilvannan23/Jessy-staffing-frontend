@@ -110,7 +110,7 @@ const ServiceDetail = () => {
                     </div>
                     <div>
                       <small className="text-muted d-block">Direct Line</small>
-                      <strong className="text-navy">+1 (800) 555-2739</strong>
+                      <strong className="text-navy">8056567352 / 9487577852</strong>
                     </div>
                   </div>
 

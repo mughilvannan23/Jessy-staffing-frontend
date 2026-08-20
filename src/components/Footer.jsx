@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '../assets/logo.png';
 
 const Footer = () => {
   const [subscribed, setSubscribed] = useState(false);
@@ -37,13 +38,16 @@ const Footer = () => {
         <div className="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
           <div className="col-lg-5 col-md-6">
             <div className="d-flex align-items-center gap-2 mb-3">
-              <div className="rounded-3 bg-white text-primary p-2 d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
-                <i className="bi bi-briefcase-fill fs-5" style={{ color: '#0B4F81' }}></i>
-              </div>
-              <span className="fw-extrabold fs-4 text-white">JESSY GLOBAL</span>
+              <img
+                src={logoImg}
+                alt="Jessy Agencies Logo"
+                className="bg-white p-1 rounded-2 shadow-sm"
+                style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span className="fw-extrabold fs-4 text-white">JESSY AGENCIES</span>
             </div>
             <p className="text-light opacity-75 small leading-relaxed mb-4" style={{ maxWidth: '400px' }}>
-              International leader in executive placement, school staffing, healthcare clinical deployment, facility security, and corporate HR outsourcing solutions.
+              Premier placement consultancy providing executive placement, school staffing, healthcare clinical deployment, facility security, home care nursing, and corporate HR solutions.
             </p>
 
             <div className="d-flex gap-2">
@@ -75,41 +79,31 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-4 col-md-6">
-            <h6 className="text-white fw-bold mb-3">Newsletter & Updates</h6>
-            <p className="text-light opacity-75 small">Subscribe to receive executive talent insights and market reports.</p>
-            
-            {subscribed ? (
-              <div className="alert alert-success py-2 px-3 small rounded-3 mb-0" role="alert">
-                <i className="bi bi-check-circle-fill me-1"></i> Thank you for subscribing!
+            <h6 className="text-white fw-bold mb-3">Contact Details</h6>
+            <div className="d-flex flex-column gap-2 small text-light opacity-85">
+              <div>
+                <i className="bi bi-person-fill text-info me-2"></i>
+                <span><strong>Founder:</strong> B. Devaraj</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="d-flex flex-column gap-2">
-                <div className="input-group">
-                  <input
-                    type="email"
-                    className="form-control form-control-sm bg-white bg-opacity-10 text-white border-secondary border-opacity-50 placeholder-white-50"
-                    placeholder="Enter business email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  <button className="btn btn-info text-white btn-sm px-3" type="submit">
-                    Join
-                  </button>
-                </div>
-              </form>
-            )}
-
-            <div className="mt-4 pt-2">
-              <small className="d-block text-light opacity-75"><i className="bi bi-geo-alt-fill text-info me-2"></i> 100 Enterprise Blvd, Financial District, NY</small>
-              <small className="d-block text-light opacity-75 mt-1"><i className="bi bi-telephone-fill text-info me-2"></i> +1 (800) 555-2739</small>
+              <div>
+                <i className="bi bi-geo-alt-fill text-info me-2"></i>
+                <span>No 267, Ramu Army Complex, Vettavalam Road, Enthal Bypass, Tiruvannamalai - 606601</span>
+              </div>
+              <div>
+                <i className="bi bi-phone-fill text-info me-2"></i>
+                <span><strong>Mobile:</strong> 8056567352 / 9487577852</span>
+              </div>
+              <div>
+                <i className="bi bi-telephone-fill text-info me-2"></i>
+                <span><strong>Office:</strong> 04175-252535</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-light opacity-75">
           <div>
-            &copy; {new Date().getFullYear()} Jessy Global Staffing & HR Solutions Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Jessy Agencies. All rights reserved.
           </div>
           <div className="d-flex gap-3">
             <a href="#privacy" className="text-light text-decoration-none">Privacy Policy</a>
